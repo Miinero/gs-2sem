@@ -1,85 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.AppointmentRegisterActivity">
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/register_activity_message"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cadastramento de consulta"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="28sp"
-        android:layout_marginTop="50dp"
-        android:fontFamily="sans-serif-medium"
-        />
+        tools:context=".ui.AppointmentRegisterActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/register_activity_layout_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/register_activity_message"
-        android:layout_marginHorizontal="25dp"
-        android:layout_marginTop="30dp"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/register_activity_edttext_name"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/register_activity_message"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Nome completo"
-            android:maxLines="1"
-            android:inputType="textPersonName"
+            android:text="Cadastramento de consulta"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:textSize="28sp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="sans-serif-medium"
             />
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/register_activity_edttext_date"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:maxLength="10"
-        android:layout_marginTop="40dp"
-        android:hint="Data"
-        android:textColorHint="@color/light_grey"
-        android:focusable="false"
-        android:cursorVisible="false"
-        app:layout_constraintStart_toStartOf="@id/register_activity_layout_name"
-        app:layout_constraintTop_toBottomOf="@+id/register_activity_layout_name"
-        />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/register_activity_layout_cpf"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@id/register_activity_layout_name"
-        app:layout_constraintStart_toEndOf="@+id/register_activity_edttext_date"
-        app:layout_constraintTop_toBottomOf="@id/register_activity_layout_name"
-        app:layout_constraintBottom_toBottomOf="@id/register_activity_edttext_date"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/register_activity_edttext_cpf"
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/register_activity_layout_name"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="CPF"
-            android:maxLines="1"
-            android:inputType="number"
-            android:maxLength="14"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/register_activity_message"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="30dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_activity_edttext_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome completo"
+                android:maxLines="1"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <EditText
+            android:id="@+id/register_activity_edttext_date"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:maxLength="10"
+            android:layout_marginTop="40dp"
+            android:hint="Data"
+            android:textColorHint="@color/light_grey"
+            android:focusable="false"
+            android:cursorVisible="false"
+            app:layout_constraintStart_toStartOf="@id/register_activity_layout_name"
+            app:layout_constraintTop_toBottomOf="@+id/register_activity_layout_name"
             />
-    </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/register_activity_layout_cpf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/register_activity_layout_name"
+            app:layout_constraintStart_toEndOf="@+id/register_activity_edttext_date"
+            app:layout_constraintTop_toBottomOf="@id/register_activity_layout_name"
+            app:layout_constraintBottom_toBottomOf="@id/register_activity_edttext_date"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_activity_edttext_cpf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="CPF"
+                android:maxLines="1"
+                android:inputType="number"
+                android:maxLength="14"
+                android:digits="1234567890.-"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/register_activity_spinner_txtview"
@@ -104,42 +109,44 @@
             android:layout_marginTop="5dp"
             />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/register_activity_layout_desc"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/register_activity_layout_cpf"
-        android:layout_marginHorizontal="25dp"
-        android:layout_marginTop="20dp"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/register_activity_edttext_desc"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Descrição"
-            android:inputType="textMultiLine"
-            android:gravity="top"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/register_activity_layout_desc"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/register_activity_spinner"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="20dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_activity_edttext_desc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Descrição"
+                android:inputType="textMultiLine"
+                android:gravity="top"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/register_activity_button_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="cadastrar"
+            android:textSize="18sp"
+            android:textColor="@color/grey"
+            android:background="@drawable/custom_button_border"
+            app:layout_constraintStart_toStartOf="@id/register_activity_layout_desc"
+            app:layout_constraintEnd_toEndOf="@id/register_activity_layout_desc"
+            app:layout_constraintTop_toBottomOf="@id/register_activity_layout_desc"
+            android:layout_marginTop="120dp"
+            app:layout_constraintWidth_percent="0.75"
             />
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/register_activity_button_submit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="cadastrar"
-        android:textSize="18sp"
-        android:textColor="@color/grey"
-        android:background="@drawable/custom_button_border"
-        app:layout_constraintStart_toStartOf="@id/register_activity_layout_desc"
-        app:layout_constraintEnd_toEndOf="@id/register_activity_layout_desc"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintWidth_percent="0.75"
-        />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
