@@ -3,4 +3,7 @@
     <style name="CustomHomeButton">
         <item name="android:background">@drawable/custom_button_border</item>
     </style>
+    <style name="CustomSpinner">
+        <item name="android:background">@drawable/custom_spinner_border</item>
+    </style>
 </resources>

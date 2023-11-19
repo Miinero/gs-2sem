@@ -81,6 +81,29 @@
             />
     </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:id="@+id/register_activity_spinner_txtview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/register_activity_layout_cpf"
+            app:layout_constraintStart_toStartOf="@id/register_activity_layout_name"
+            app:layout_constraintEnd_toEndOf="@id/register_activity_layout_name"
+            android:text="Selecione o tipo de médico:"
+            android:textSize="16sp"
+            android:layout_marginTop="25dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/register_activity_spinner"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            style="@style/CustomSpinner"
+            app:layout_constraintTop_toBottomOf="@id/register_activity_spinner_txtview"
+            app:layout_constraintStart_toStartOf="@id/register_activity_layout_name"
+            app:layout_constraintEnd_toEndOf="@id/register_activity_layout_name"
+            android:layout_marginTop="5dp"
+            />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/register_activity_layout_desc"
         android:layout_width="0dp"

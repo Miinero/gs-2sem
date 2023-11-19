@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">GS 2sem</string>
+    <string-array name="options">
+        <item>Clínico geral</item>
+        <item>Cardiologista</item>
+        <item>Neurologista</item>
+        <item>Endocrinologista</item>
+        <item>Cirurgia plástica</item>
+        <item>Ortopedista</item>
+    </string-array>
 </resources>
