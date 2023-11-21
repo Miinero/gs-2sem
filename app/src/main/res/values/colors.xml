@@ -3,6 +3,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="cyan">#FF87CEFA</color>
+    <color name="water_green">#327177</color>
     <color name="grey">#FF2E2E2E</color>
     <color name="light_grey">#4D4D4D</color>
+    <color name="wine">#651515</color>
+    <color name="yellow">#FFC107</color>
+    <color name="orange">#FF9800</color>
+    <color name="green">#2EB354</color>
 </resources>
