@@ -1,27 +1,39 @@
 package com.fiap.gs2sem.ui
 
+import android.app.ActionBar.LayoutParams
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.fiap.gs2sem.R
 import com.fiap.gs2sem.databinding.ActivityRegisterAppointBinding
+import com.fiap.gs2sem.models.AppointmentDTO
 import com.fiap.gs2sem.utils.FieldChecker
 import com.fiap.gs2sem.watchers.CPFInputWatcher
+import com.google.firebase.Firebase
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.database
+import com.google.firebase.initialize
 import java.util.Calendar
+import java.util.concurrent.ThreadLocalRandom
 
 
 class AppointmentRegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterAppointBinding
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityRegisterAppointBinding.inflate(layoutInflater)
+
+        database = FirebaseDatabase.getInstance().getReference("appoints")
 
         initDatePickerListener()
         initSpinner()
@@ -73,8 +85,18 @@ class AppointmentRegisterActivity : AppCompatActivity() {
 
             if (!ok) return@setOnClickListener
 
+            val concat = database.push().key!!
 
+            val appointmentDTO = AppointmentDTO(name, date, cpf, type, desc)
 
+            database.child(concat).setValue(appointmentDTO).addOnCompleteListener {
+                Log.i("DatabaseDebug", "Usuário salvo")
+            }
+
+            val toast = Toast.makeText(this, "Consulta agendada com sucesso!", Toast.LENGTH_LONG)
+            toast.show()
+
+            finish()
         }
     }
 

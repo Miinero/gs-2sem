@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "81489129318",
+    "project_id": "gs-tap-e-mobile",
+    "storage_bucket": "gs-tap-e-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81489129318:android:3a0a96ec29e273477da2a7",
+        "android_client_info": {
+          "package_name": "com.fiap.gs2sem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtu47PxujqZEMBovSS12zlPyjB_o1p54s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
