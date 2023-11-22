@@ -32,7 +32,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         prontBtn.setOnClickListener {
-
+            val intent = Intent(this, MedicalRecordsActivity::class.java)
+            startActivity(intent)
         }
     }
 
