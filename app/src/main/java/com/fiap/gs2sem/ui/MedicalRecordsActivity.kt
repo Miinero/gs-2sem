@@ -54,7 +54,6 @@ class MedicalRecordsActivity : AppCompatActivity() {
                     appointsList.add(appointmentDTO)
                 }
 
-                // Agora 'appointments' contém a lista de AppointmentDTO
                 Log.i("DatabaseDebug", "Lista de Appointments: $appointsList")
 
                 initRecyclerView()
