@@ -1,5 +1,6 @@
 package com.fiap.gs2sem.recyclerview
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,8 +9,9 @@ import androidx.appcompat.widget.AppCompatImageButton
 import androidx.recyclerview.widget.RecyclerView
 import com.fiap.gs2sem.R
 import com.fiap.gs2sem.models.AppointmentDTO
+import com.google.firebase.database.DatabaseReference
 
-class RecyclerViewAdapter(private val appointsList: ArrayList<AppointmentDTO>):
+class RecyclerViewAdapter(private val appointsList: ArrayList<AppointmentDTO>, private val database: DatabaseReference):
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolderClass>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
@@ -26,7 +28,6 @@ class RecyclerViewAdapter(private val appointsList: ArrayList<AppointmentDTO>):
         } else {
             R.drawable.baseline_hourglass_bottom_24
         }
-
         holder.btnStatusWidget.setImageResource(imgId)
 
         val backgroundId = if (currentItem.medicalRecord != null) {
@@ -34,8 +35,28 @@ class RecyclerViewAdapter(private val appointsList: ArrayList<AppointmentDTO>):
         } else {
             R.drawable.custom_waiting_button_border
         }
-
         holder.btnStatusWidget.setBackgroundResource(backgroundId)
+
+
+        holder.btnStatusWidget.setOnClickListener {
+
+        }
+
+
+        holder.btnDeleteWidget.setOnClickListener {
+            database.child(currentItem.firebaseId).removeValue().addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+
+                    if (position != RecyclerView.NO_POSITION) {
+                        appointsList.removeAt(position)
+                        notifyItemRemoved(position)
+                        notifyItemRangeChanged(position, appointsList.size)
+                    }
+
+                    Log.i("DatabaseDebug", "Registro excluído com sucesso.")
+                }
+            }
+        }
     }
 
     override fun getItemCount(): Int {
@@ -45,5 +66,6 @@ class RecyclerViewAdapter(private val appointsList: ArrayList<AppointmentDTO>):
     class ViewHolderClass(itemView: View): RecyclerView.ViewHolder(itemView) {
         val nameWidget: TextView = itemView.findViewById(R.id.record_username)
         val btnStatusWidget: AppCompatImageButton = itemView.findViewById(R.id.record_btn_status)
+        val btnDeleteWidget: AppCompatImageButton = itemView.findViewById(R.id.record_btn_delete)
     }
 }
